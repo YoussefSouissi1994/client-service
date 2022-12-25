@@ -1,0 +1,3 @@
+[submodule "modules/core-models"]
+	path = modules/core-models
+	url = ../core-models
