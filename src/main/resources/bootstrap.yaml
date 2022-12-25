@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: client-service
+  cloud:
+    config:
+      fail-fast: true
+      username: admin
+      password: admin
+      uri: http://localhost:8888
+
