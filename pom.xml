@@ -18,7 +18,20 @@
         <spring-boot-admin.version>2.7.4</spring-boot-admin.version>
         <spring-cloud.version>2021.0.5</spring-cloud.version>
     </properties>
+    <repositories>
+        <!--other repositories if any-->
+        <repository>
+            <id>core-models</id>
+            <name>core-models</name>
+            <url>file:./modules/core-models</url>
+        </repository>
+    </repositories>
     <dependencies>
+        <dependency>
+            <groupId>tn.ipsas</groupId>
+            <artifactId>core-models</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
@@ -50,10 +63,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.kafka</groupId>
-            <artifactId>spring-kafka</artifactId>
         </dependency>
 
         <dependency>
