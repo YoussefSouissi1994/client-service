@@ -5,8 +5,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import tn.ipsas.clientseervice.service.ClientService;
+import tn.ipsas.coremodels.dto.ClientDto;
 import tn.ipsas.coremodels.models.client.Client;
+import tn.ipsas.coremodels.models.produit.Product;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -23,9 +26,17 @@ public class ClientController {
         return service.getAll(pageable);
     }
 
+    @GetMapping("all")
+    public List<Client> getAll() {
+        return service.getAll();
+    }
     @GetMapping("{id}")
     public Client byId(@PathVariable("id") String id) {
         return service.getById(id);
+    }
+    @GetMapping("details/{id}")
+    public ClientDto detailsById(@PathVariable("id") String id) {
+        return service.getDetailsById(id);
     }
 
     @GetMapping("exists/{email}")
